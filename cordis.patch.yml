@@ -1,0 +1,5 @@
+# A formal bundle row survives DSH restarts. The browser half loads through
+# the package's dsh.client declaration in package.json.
+- insert:
+    - id: opencode-go-quota
+      name: dsh-opencode-go-quota
