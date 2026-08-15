@@ -1,5 +1,7 @@
 # DSH OpenCode Go Quota
 
+[中文](README.md) · [English](README.en.md) · [日本語](README.ja.md)
+
 这是一个可持久安装的 DSH Web 插件：在侧边栏底部提供 OC Go 额度入口，点击后显示滚动、每周和每月额度，以及各窗口的重置时间。
 
 它替代了只能存活在单次 DSH 进程中的动态 Cordis 插件。安装到 web profile 后，重启 DSH 仍会自动加载。
