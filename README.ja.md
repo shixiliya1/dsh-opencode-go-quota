@@ -35,13 +35,13 @@ pnpm run build
 事前ビルド済み Release パッケージをインストールします。
 
 ```powershell
-dsh plugin --profile web add https://github.com/shixiliya1/dsh-opencode-go-quota/releases/download/v0.1.1/dsh-opencode-go-quota-0.1.1.tgz
+pnpm dsh plugin --profile web add https://github.com/shixiliya1/dsh-opencode-go-quota/releases/download/v0.2.0/dsh-opencode-go-quota-0.2.0.tgz
 ```
 
-Release パッケージはローカルビルド不要です。タグに固定したソース版もインストールできます。
+`dsh-v0.1.3-alpha.1` は npm に公開されていないため、公式 source tag の checkout で `pnpm install` 後に実行してください。Release パッケージはローカルビルド不要です。タグに固定したソース版もインストールできます。
 
 ```powershell
-dsh plugin --profile web add github:shixiliya1/dsh-opencode-go-quota#v0.1.1
+pnpm dsh plugin --profile web add github:shixiliya1/dsh-opencode-go-quota#v0.2.0
 ```
 
 ソースインストールではこのパッケージの `prepare` ビルドが実行されます。DSH profile の pnpm がビルド許可を求めた場合は、エラーが表示した正確なパッケージキーだけを、その profile の `pnpm-workspace.yaml` に追加して同じコマンドを再実行してください。一回限りの agent profile には `web` を `headless` に置き換えます。
@@ -49,7 +49,7 @@ dsh plugin --profile web add github:shixiliya1/dsh-opencode-go-quota#v0.1.1
 更新時は新しい Release URL で `dsh plugin add` を再実行します。アンインストール:
 
 ```powershell
-dsh plugin --profile web remove dsh-opencode-go-quota
+pnpm dsh plugin --profile web remove dsh-opencode-go-quota
 ```
 
 ### ローカル開発版のインストール
@@ -58,7 +58,7 @@ Windows では、まず空白を含まないパスに事前ビルドパッケー
 
 ```powershell
 pnpm pack --pack-destination C:\dsh-packages
-npx @deepseek-ai/dsh plugin --profile web add file:C:/dsh-packages/dsh-opencode-go-quota-0.1.1.tgz
+pnpm dsh plugin --profile web add file:C:/dsh-packages/dsh-opencode-go-quota-0.2.0.tgz
 ```
 
 DSH Web を再起動し、ブラウザーを更新してください。サイドバー下部にエントリーが現れます。
@@ -67,7 +67,7 @@ DSH Web を再起動し、ブラウザーを更新してください。サイド
 
 ## 互換性
 
-- DSH web profile `0.1.0-rc.6`
+- 公式 source tag からビルドした DSH web profile `dsh-v0.1.3-alpha.1`
 - Node.js `^22.19` または `>=24`
 - OpenCode エンドポイント: `GET https://opencode.ai/zen/go/v1/usage`
 

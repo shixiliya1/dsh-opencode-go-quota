@@ -35,13 +35,13 @@ pnpm run build
 推荐直接安装预构建发布包：
 
 ~~~powershell
-dsh plugin --profile web add https://github.com/shixiliya1/dsh-opencode-go-quota/releases/download/v0.1.1/dsh-opencode-go-quota-0.1.1.tgz
+pnpm dsh plugin --profile web add https://github.com/shixiliya1/dsh-opencode-go-quota/releases/download/v0.2.0/dsh-opencode-go-quota-0.2.0.tgz
 ~~~
 
-发布包无需本地构建。也可从固定版本源码安装：
+`dsh-v0.1.3-alpha.1` 尚未发布到 npm。请先在官方源码 tag 目录完成 `pnpm install`，再运行上述 `pnpm dsh` 命令。发布包无需本地构建。也可从固定版本源码安装：
 
 ~~~powershell
-dsh plugin --profile web add github:shixiliya1/dsh-opencode-go-quota#v0.1.1
+pnpm dsh plugin --profile web add github:shixiliya1/dsh-opencode-go-quota#v0.2.0
 ~~~
 
 源码安装会运行本包的 `prepare` 构建。如果 DSH profile 的 pnpm 提示需要允许构建，请按报错中给出的精确包名加入 allowlist，再重试同一条命令。把 `web` 换成 `headless` 可安装到一次性 agent profile。
@@ -49,7 +49,7 @@ dsh plugin --profile web add github:shixiliya1/dsh-opencode-go-quota#v0.1.1
 升级时，用新版发布包地址再次执行 `dsh plugin add`。卸载命令：
 
 ~~~powershell
-dsh plugin --profile web remove dsh-opencode-go-quota
+pnpm dsh plugin --profile web remove dsh-opencode-go-quota
 ~~~
 
 ### 本地开发安装
@@ -58,7 +58,7 @@ dsh plugin --profile web remove dsh-opencode-go-quota
 
 ~~~powershell
 pnpm pack --pack-destination C:\Users\xili\.dsh\packages
-npx @deepseek-ai/dsh plugin --profile web add file:C:/Users/xili/.dsh/packages/dsh-opencode-go-quota-0.1.1.tgz
+pnpm dsh plugin --profile web add file:C:/Users/xili/.dsh/packages/dsh-opencode-go-quota-0.2.0.tgz
 ~~~
 
 然后重新启动 dsh web，并在浏览器中刷新页面。侧边栏底部会出现入口。
@@ -67,7 +67,7 @@ npx @deepseek-ai/dsh plugin --profile web add file:C:/Users/xili/.dsh/packages/d
 
 ## 兼容性
 
-- DSH web profile 0.1.0-rc.6；
+- DSH web profile `dsh-v0.1.3-alpha.1`（官方源码 tag 构建）；
 - Node.js ^22.19 或 >=24；
 - OpenCode 接口 GET https://opencode.ai/zen/go/v1/usage。
 

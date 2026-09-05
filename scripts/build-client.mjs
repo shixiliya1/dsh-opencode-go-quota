@@ -6,7 +6,7 @@ const output = resolve('lib/client.js')
 const result = await build({
   bundle: true,
   entryPoints: [resolve('src/client/index.ts')],
-  external: ['react', 'react/jsx-runtime'],
+  external: ['react', 'react/jsx-runtime', '@deepseek-ai/*'],
   format: 'cjs',
   outfile: output,
   platform: 'browser',
